@@ -121,13 +121,16 @@ import tarapith_gallery_4 from "./tarapith_gallery_4.jpg";
 // 
 
 import location_icon from "./location_img.svg";
-
+import star from './starIconFilled.svg';
+import hero_img from './hero_img.jpeg';
 // =============================
 // Export assets
 // =============================
 
 export const assets = {
   location_img: location_icon,
+  star,
+  hero_img,
 
   // Hero Images
   kedarnath_temple_hero,
