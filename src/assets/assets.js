@@ -235,6 +235,40 @@ import vaishno_devi_gallery_2 from "./vaishno_devi_gallery_2.jpg";
 import vaishno_devi_gallery_3 from "./vaishno_devi_gallery_3.jpg";
 import vaishno_devi_gallery_4 from "./vaishno_devi_gallery_4.png";
 
+
+export const pilgrimageCategories = [
+  {
+    id: 1,
+    name: "4 Char Dhams",
+    count: 4,
+    slug: "char-dham",
+  },
+  {
+    id: 2,
+    name: "12 Jyotirlings",
+    count: 12,
+    slug: "jyotirlingas",
+  },
+  {
+    id: 3,
+    name: "51 Shakti Peeths",
+    count: 51,
+    slug: "shakti-peeths",
+  },
+  {
+    id: 4,
+    name: "7 Sacred Cities",
+    count: 7,
+    slug: "sapta-puri",
+  },
+  {
+    id: 5,
+    name: "108 Divya Desams",
+    count: 108,
+    slug: "divya-desams",
+  },
+];
+
 export const templeImages = {
   kedarnath: {
     hero: kedarnath_temple_hero,
