@@ -7,7 +7,7 @@ const Heritage = () => {
       {/* =========================
           Heritage Section
       ========================= */}
-      <div className="bg-[#0D0B0B] w-full min-h-screen pt-15">
+      <div id="heritage" className="bg-[#0D0B0B] w-full min-h-screen pt-15">
 
         {/* Header */}
         <div className="w-[90%] mx-auto">
@@ -31,7 +31,7 @@ const Heritage = () => {
             {/* Text Content */}
             <div className="flex flex-col justify-baseline">
               <h2 className="text-6xl text-center md:text-start md:text-8xl text-orange-400/20">
-                01
+                OI
               </h2>
 
               <h3 className="text-white text-4xl md:text-6xl mt-5">
