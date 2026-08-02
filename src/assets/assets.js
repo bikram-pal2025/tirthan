@@ -123,6 +123,7 @@ import tarapith_gallery_4 from "./tarapith_gallery_4.jpg";
 import location_icon from "./location_img.svg";
 import star from './starIconFilled.svg';
 import hero_img from './hero_img.jpeg';
+import me from  "./me.jpeg";
 // =============================
 // Export assets
 // =============================
@@ -131,6 +132,7 @@ export const assets = {
   location_img: location_icon,
   star,
   hero_img,
+  me,
 
   // Hero Images
   kedarnath_temple_hero,
@@ -828,4 +830,59 @@ export const temples = [
 
 
  
+];
+
+
+export const pilgrimageCircuits = [
+  {
+    id: 1,
+    number: "OI",
+    title: "Char Dham",
+    subtitle: "The Four Abodes",
+    shrines: "4 Shrines",
+    region: "Uttarakhand Himalayas",
+    description:
+      "Yamunotri, Gangotri, Kedarnath and Badrinath — the four Himalayan sanctuaries that every Hindu aspires to visit. The yatra traces the sources of India's holiest rivers through some of the most formidable mountain terrain on earth.",
+    temples: ["Yamunotri", "Gangotri", "Kedarnath", "Badrinath"],
+    image: kedarnath_gallery_2,
+  },
+
+  {
+    id: 2,
+    number: "02",
+    title: "Dwadasha Jyotirlinga",
+    subtitle: "Twelve Pillars of Light",
+    shrines: "12 Shrines",
+    region: "Across India",
+    description:
+      "Twelve luminous manifestations of Lord Shiva, scattered from Somnath on the western sea to Rameshwaram in the deep south. Each Jyotirlinga marks a place where Shiva is believed to have appeared as a fiery column of light.",
+    temples: [
+      "Somnath",
+      "Mallikarjuna",
+      "Mahakaleshwar",
+      "Kashi Vishwanath",
+      "Kedarnath",
+      "+7 More",
+    ],
+    image: kashi_vishwanath_gallery_4,
+  },
+
+  {
+    id: 3,
+    number: "03",
+    title: "Shakti Peethas",
+    subtitle: "Seats of the Goddess",
+    shrines: "51 Shrines",
+    region: "Indian Subcontinent",
+    description:
+      "Fifty-one sacred sites marking where the body of Goddess Sati is believed to have fallen across the subcontinent. Each Peetha venerates a distinct form of Shakti, the primordial feminine energy of the cosmos.",
+    temples: [
+      "Kamakhya",
+      "Kalighat",
+      "Vaishno Devi",
+      "Jwala Ji",
+      "+47 More",
+    ],
+    image: meenakshi_gallery_4,
+  },
 ];

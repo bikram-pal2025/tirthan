@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { temples, assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Tamples = () => {
+  const navigate = useNavigate()
   const [search, setSearch] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedDeity, setSelectedDeity] = useState("");
@@ -11,23 +13,22 @@ const Tamples = () => {
     const matchesSearch =
       temple.templeName.toLowerCase().includes(search.toLowerCase()) ||
       temple.state.toLowerCase().includes(search.toLowerCase()) ||
-      temple.district.toLowerCase().includes(search.toLowerCase()) ||
-      temple.mainDeity.toLowerCase().includes(search.toLowerCase()) ||
-      temple.category.toLowerCase().includes(search.toLowerCase());
+      temple.district.toLowerCase().includes(search.toLowerCase()) ;
+      
 
     const matchesState = selectedState === "" || temple.state === selectedState;
 
-    const matchesDeity =
-      selectedDeity === "" || temple.mainDeity === selectedDeity;
+    const matchesTemple =
+      selectedDeity === "" || temple.templeName === selectedDeity;
 
     const matchesCategory =
       selectedCategory === "" || temple.category === selectedCategory;
 
-    return matchesSearch && matchesState && matchesDeity && matchesCategory;
+    return matchesSearch && matchesState && matchesTemple && matchesCategory;
   });
   return (
     <>
-      <div className="bg-[#0D0B0B] min-h-screen w-[90%] mx-auto  pt-10 md:pt-15 lg:pt-60 ">
+      <div id="temples" className="bg-[#0D0B0B] min-h-screen w-[90%] mx-auto  pt-10 md:pt-15 lg:pt-60 ">
         {/* make the top section */}
         <div className="flex flex-col justify-baseline items-baseline gap-5">
           <p className="text-orange-400 text-xs tracking-[6px] uppercase">
@@ -80,9 +81,9 @@ const Tamples = () => {
               onChange={(e) => setSelectedDeity(e.target.value)}
               className="w-full bg-[#181515] border border-[#3A3535] text-[#A8A29E] text-xs open-sans uppercase px-4 py-4 pr-10 appearance-none outline-none cursor-pointer"
             >
-              <option value="">ALL DEITIES</option>
-              {temples.map((mainDeity, index) => (
-                <option key={index}>{mainDeity.mainDeity}</option>
+              <option value="">ALL TEMPLES</option>
+              {temples.map((temple, index) => (
+                <option key={index}>{temple.templeName}</option>
               ))}
             </select>
 
@@ -117,7 +118,7 @@ const Tamples = () => {
                   // =================== 16:9 | 3:4 ===================
                   <div className="flex flex-col lg:flex-row gap-6">
                     {/* Landscape */}
-                    <div className="relative w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
+                    <div   onClick={() => navigate(`/temples/${temple.id}`)} className="relative  w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
                       <div
                         className="absolute  inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -147,7 +148,7 @@ const Tamples = () => {
                     </div>
 
                     {/* Portrait */}
-                    <div className="relative hidden! lg:block! lg:w-[30%] w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
+                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative hidden! lg:block! lg:w-[30%] w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -170,7 +171,7 @@ const Tamples = () => {
                   // =================== 3:4 | 16:9 ===================
                   <div className="flex flex-col lg:flex-row gap-6">
                     {/* Portrait */}
-                    <div className="relative lg:w-[30%] hidden! lg:block! w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
+                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative lg:w-[30%] hidden! lg:block! w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -190,7 +191,7 @@ const Tamples = () => {
                     </div>
 
                     {/* Landscape */}
-                    <div className="relative w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
+                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
