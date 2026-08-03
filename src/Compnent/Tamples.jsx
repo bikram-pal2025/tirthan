@@ -3,7 +3,7 @@ import { temples, assets } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const Tamples = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedDeity, setSelectedDeity] = useState("");
@@ -13,8 +13,7 @@ const Tamples = () => {
     const matchesSearch =
       temple.templeName.toLowerCase().includes(search.toLowerCase()) ||
       temple.state.toLowerCase().includes(search.toLowerCase()) ||
-      temple.district.toLowerCase().includes(search.toLowerCase()) ;
-      
+      temple.district.toLowerCase().includes(search.toLowerCase());
 
     const matchesState = selectedState === "" || temple.state === selectedState;
 
@@ -26,9 +25,13 @@ const Tamples = () => {
 
     return matchesSearch && matchesState && matchesTemple && matchesCategory;
   });
+
   return (
     <>
-      <div id="temples" className="bg-[#0D0B0B] min-h-screen w-[90%] mx-auto  pt-10 md:pt-15 lg:pt-60 ">
+      <div
+        id="temples"
+        className="bg-[#0D0B0B] min-h-screen w-[90%] mx-auto  pt-10 md:pt-15 lg:pt-60 "
+      >
         {/* make the top section */}
         <div className="flex flex-col justify-baseline items-baseline gap-5">
           <p className="text-orange-400 text-xs tracking-[6px] uppercase">
@@ -112,13 +115,22 @@ const Tamples = () => {
 
         <section className="w-full bg-[#0D0B0B] py-16">
           <div className="w-full mx-auto px-5">
+            {filteredTemples.length === 0 && (
+              <div className="text-center text-white py-10">
+                No temple found
+              </div>
+            )}
+
             {filteredTemples.slice(0, 4).map((temple, index) => (
               <div key={temple.id} className="mb-10">
                 {index % 2 === 0 ? (
                   // =================== 16:9 | 3:4 ===================
                   <div className="flex flex-col lg:flex-row gap-6">
                     {/* Landscape */}
-                    <div   onClick={() => navigate(`/temples/${temple.id}`)} className="relative  w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
+                    <div
+                      onClick={() => navigate(`/temples/${temple.id}`)}
+                      className="relative  w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer"
+                    >
                       <div
                         className="absolute  inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -148,7 +160,10 @@ const Tamples = () => {
                     </div>
 
                     {/* Portrait */}
-                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative hidden! lg:block! lg:w-[30%] w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
+                    <div
+                      onClick={() => navigate(`/temples/${temple.id}`)}
+                      className="relative hidden! lg:block! lg:w-[30%] w-full aspect-[3/4]  overflow-hidden group cursor-pointer"
+                    >
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -171,7 +186,10 @@ const Tamples = () => {
                   // =================== 3:4 | 16:9 ===================
                   <div className="flex flex-col lg:flex-row gap-6">
                     {/* Portrait */}
-                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative lg:w-[30%] hidden! lg:block! w-full aspect-[3/4]  overflow-hidden group cursor-pointer">
+                    <div
+                      onClick={() => navigate(`/temples/${temple.id}`)}
+                      className="relative lg:w-[30%] hidden! lg:block! w-full aspect-[3/4]  overflow-hidden group cursor-pointer"
+                    >
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{
@@ -191,7 +209,10 @@ const Tamples = () => {
                     </div>
 
                     {/* Landscape */}
-                    <div onClick={() => navigate(`/temples/${temple.id}`)} className="relative w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer">
+                    <div
+                      onClick={() => navigate(`/temples/${temple.id}`)}
+                      className="relative w-full lg:w-[70%]  aspect-video  overflow-hidden group cursor-pointer"
+                    >
                       <div
                         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                         style={{

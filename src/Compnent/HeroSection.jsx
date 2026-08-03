@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex flex-col min-h-screen  overflow-hidden pb-10 bg-[#0F0F0F]">
+      <section id="HeroSection" className="relative flex flex-col min-h-screen  overflow-hidden pb-10 bg-[#0F0F0F]">
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
